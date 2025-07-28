@@ -7,15 +7,13 @@
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import {
-  CallToolRequestSchema,
   CompleteRequestSchema,
   GetPromptRequestSchema,
   ListPromptsRequestSchema,
   ListResourcesRequestSchema,
-  ListToolsRequestSchema,
   ReadResourceRequestSchema,
 } from "@modelcontextprotocol/sdk/types.js";
-import { CUISINES, RECIPES, formatRecipesAsMarkdown } from "./recipes.js";
+import { CUISINES, formatRecipesAsMarkdown } from "./recipes.js";
 
 class FavoriteRecipesServer {
   private server: Server;
@@ -205,22 +203,22 @@ Focus on ingredient overlap between recipes to reduce food waste.`,
         };
       }
 
-      // Handle prompt argument completions
-      if (
-        "name" in ref &&
-        ref.name === "weekly-meal-planner" &&
-        argument.name === "cuisine"
-      ) {
-        const matchingCuisines = CUISINES.filter((cuisine) =>
-          cuisine.startsWith(argument.value.toLowerCase())
-        );
-        return {
-          completion: {
-            values: matchingCuisines,
-            hasMore: false,
-          },
-        };
-      }
+      // // Handle prompt argument completions
+      // if (
+      //   "name" in ref &&
+      //   ref.name === "weekly-meal-planner" &&
+      //   argument.name === "cuisine"
+      // ) {
+      //   const matchingCuisines = CUISINES.filter((cuisine) =>
+      //     cuisine.startsWith(argument.value.toLowerCase())
+      //   );
+      //   return {
+      //     completion: {
+      //       values: matchingCuisines,
+      //       hasMore: false,
+      //     },
+      //   };
+      // }
 
       return {
         completion: {
