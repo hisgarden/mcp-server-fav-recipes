@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * MCP Server for favorite recipes with country-based resources and prompts
+ * MCP Server for favorite recipes with cuisine-based resources and prompts
  */
 
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
@@ -15,7 +15,7 @@ import {
   ListToolsRequestSchema,
   ReadResourceRequestSchema,
 } from "@modelcontextprotocol/sdk/types.js";
-import { COUNTRIES, RECIPES, formatRecipesAsMarkdown } from "./recipes.js";
+import { CUISINES, RECIPES, formatRecipesAsMarkdown } from "./recipes.js";
 
 class FavoriteRecipesServer {
   private server: Server;
@@ -42,12 +42,12 @@ class FavoriteRecipesServer {
     // List available resources
     this.server.setRequestHandler(ListResourcesRequestSchema, async () => {
       return {
-        resources: COUNTRIES.map((country) => ({
-          uri: `file://recipes/${country}`,
-          name: `${country.charAt(0).toUpperCase() + country.slice(1)} Recipes`,
+        resources: CUISINES.map((cuisine) => ({
+          uri: `file://recipes/${cuisine}`,
+          name: `${cuisine.charAt(0).toUpperCase() + cuisine.slice(1)} Recipes`,
           mimeType: "text/markdown",
           description: `Traditional recipes from ${
-            country.charAt(0).toUpperCase() + country.slice(1)
+            cuisine.charAt(0).toUpperCase() + cuisine.slice(1)
           } cuisine`,
         })),
       };
@@ -63,12 +63,12 @@ class FavoriteRecipesServer {
           throw new Error(`Unknown resource: ${uri}`);
         }
 
-        const country = uri.replace("file://recipes/", "");
-        if (!COUNTRIES.includes(country)) {
-          throw new Error(`Unknown country: ${country}`);
+        const cuisine = uri.replace("file://recipes/", "");
+        if (!CUISINES.includes(cuisine)) {
+          throw new Error(`Unknown cuisine: ${cuisine}`);
         }
 
-        const content = formatRecipesAsMarkdown(country);
+        const content = formatRecipesAsMarkdown(cuisine);
 
         return {
           contents: [
@@ -89,11 +89,11 @@ class FavoriteRecipesServer {
           {
             name: "weekly-meal-planner",
             description:
-              "Create a weekly meal plan and grocery shopping list from country-specific recipes",
+              "Create a weekly meal plan and grocery shopping list from cuisine-specific recipes",
             arguments: [
               {
-                name: "country",
-                description: "The country cuisine to plan meals from",
+                name: "cuisine",
+                description: "The cuisine to plan meals from",
                 required: true,
               },
             ],
@@ -110,8 +110,8 @@ class FavoriteRecipesServer {
         throw new Error(`Unknown prompt: ${name}`);
       }
 
-      if (!args || !args.country) {
-        const available = COUNTRIES.join(", ");
+      if (!args || !args.cuisine) {
+        const available = CUISINES.join(", ");
         return {
           description: "Weekly meal planner",
           messages: [
@@ -119,16 +119,16 @@ class FavoriteRecipesServer {
               role: "user",
               content: {
                 type: "text",
-                text: `Please specify a country to plan your weekly meals from the following options: ${available}`,
+                text: `Please specify a cuisine to plan your weekly meals from the following options: ${available}`,
               },
             },
           ],
         };
       }
 
-      const country = args.country.toLowerCase();
-      if (!COUNTRIES.includes(country)) {
-        const available = COUNTRIES.join(", ");
+      const cuisine = args.cuisine.toLowerCase();
+      if (!CUISINES.includes(cuisine)) {
+        const available = CUISINES.join(", ");
         return {
           description: "Weekly meal planner",
           messages: [
@@ -136,19 +136,19 @@ class FavoriteRecipesServer {
               role: "user",
               content: {
                 type: "text",
-                text: `Sorry, I don't have recipes for '${country}'. Available countries: ${available}`,
+                text: `Sorry, I don't have recipes for '${cuisine}'. Available cuisines: ${available}`,
               },
             },
           ],
         };
       }
 
-      const resourceUri = `file://recipes/${country}`;
-      const recipeContent = formatRecipesAsMarkdown(country);
+      const resourceUri = `file://recipes/${cuisine}`;
+      const recipeContent = formatRecipesAsMarkdown(cuisine);
 
       return {
         description: `Weekly meal planner for ${
-          country.charAt(0).toUpperCase() + country.slice(1)
+          cuisine.charAt(0).toUpperCase() + cuisine.slice(1)
         } cuisine`,
         messages: [
           {
@@ -156,7 +156,7 @@ class FavoriteRecipesServer {
             content: {
               type: "text",
               text: `Plan cooking for the week. I've attached the recipes from ${
-                country.charAt(0).toUpperCase() + country.slice(1)
+                cuisine.charAt(0).toUpperCase() + cuisine.slice(1)
               } cuisine.
 
 Please create:
@@ -191,15 +191,15 @@ Focus on ingredient overlap between recipes to reduce food waste.`,
       // Handle resource template completions
       if (
         "uri" in ref &&
-        ref.uri === "file://recipes/{country}" &&
-        argument.name === "country"
+        ref.uri === "file://recipes/{cuisine}" &&
+        argument.name === "cuisine"
       ) {
-        const matchingCountries = COUNTRIES.filter((country) =>
-          country.startsWith(argument.value.toLowerCase())
+        const matchingCuisines = CUISINES.filter((cuisine) =>
+          cuisine.startsWith(argument.value.toLowerCase())
         );
         return {
           completion: {
-            values: matchingCountries,
+            values: matchingCuisines,
             hasMore: false,
           },
         };
@@ -209,14 +209,14 @@ Focus on ingredient overlap between recipes to reduce food waste.`,
       if (
         "name" in ref &&
         ref.name === "weekly-meal-planner" &&
-        argument.name === "country"
+        argument.name === "cuisine"
       ) {
-        const matchingCountries = COUNTRIES.filter((country) =>
-          country.startsWith(argument.value.toLowerCase())
+        const matchingCuisines = CUISINES.filter((cuisine) =>
+          cuisine.startsWith(argument.value.toLowerCase())
         );
         return {
           completion: {
-            values: matchingCountries,
+            values: matchingCuisines,
             hasMore: false,
           },
         };

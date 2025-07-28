@@ -1,5 +1,5 @@
 /**
- * Recipe data for different countries
+ * Recipe data for different cuisines
  */
 
 export interface Recipe {
@@ -9,11 +9,11 @@ export interface Recipe {
   instructions: string[];
 }
 
-export interface CountryRecipes {
-  [country: string]: Recipe[];
+export interface CuisineRecipes {
+  [cuisine: string]: Recipe[];
 }
 
-export const RECIPES: CountryRecipes = {
+export const RECIPES: CuisineRecipes = {
   italian: [
     {
       name: "Spaghetti Carbonara",
@@ -320,15 +320,15 @@ export const RECIPES: CountryRecipes = {
   ]
 };
 
-export const COUNTRIES = Object.keys(RECIPES);
+export const CUISINES = Object.keys(RECIPES);
 
-export function formatRecipesAsMarkdown(country: string): string {
-  const recipes = RECIPES[country];
+export function formatRecipesAsMarkdown(cuisine: string): string {
+  const recipes = RECIPES[cuisine];
   if (!recipes) {
-    return `No recipes found for ${country}`;
+    return `No recipes found for ${cuisine}`;
   }
 
-  let markdown = `# ${country.charAt(0).toUpperCase() + country.slice(1)} Recipes\n\n`;
+  let markdown = `# ${cuisine.charAt(0).toUpperCase() + cuisine.slice(1)} Recipes\n\n`;
   
   for (const recipe of recipes) {
     markdown += `## ${recipe.name}\n`;
