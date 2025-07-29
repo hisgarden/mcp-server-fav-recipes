@@ -186,7 +186,23 @@ Focus on ingredient overlap between recipes to reduce food waste.`,
     this.server.setRequestHandler(CompleteRequestSchema, async (request) => {
       const { ref, argument } = request.params;
 
-      // Handle resource template completions (can also be used for prompts)
+      // Handle prompt argument completions
+      if (
+        "name" in ref &&
+        ref.name === "weekly-meal-planner" &&
+        argument.name === "cuisine"
+      ) {
+        const matchingCuisines = CUISINES.filter((cuisine) =>
+          cuisine.startsWith(argument.value.toLowerCase())
+        );
+        return {
+          completion: {
+            values: matchingCuisines,
+            hasMore: false,
+          },
+        };
+      }
+
       if (
         "uri" in ref &&
         ref.uri === "file://recipes/{cuisine}" &&
