@@ -51,7 +51,7 @@ class FavoriteRecipesServer {
       };
     });
 
-    // Read a specific resource
+    // Read a resource
     this.server.setRequestHandler(
       ReadResourceRequestSchema,
       async (request) => {
@@ -100,7 +100,7 @@ class FavoriteRecipesServer {
       };
     });
 
-    // Get a specific prompt with embedded resources
+    // Get a prompt
     this.server.setRequestHandler(GetPromptRequestSchema, async (request) => {
       const { name, arguments: args } = request.params;
 
@@ -182,11 +182,11 @@ Focus on ingredient overlap between recipes to reduce food waste.`,
       };
     });
 
-    // Handle completions for prompt arguments and resource template parameters
+    // Handle completions
     this.server.setRequestHandler(CompleteRequestSchema, async (request) => {
       const { ref, argument } = request.params;
 
-      // Handle resource template completions
+      // Handle resource template completions (can also be used for prompts)
       if (
         "uri" in ref &&
         ref.uri === "file://recipes/{cuisine}" &&
@@ -202,23 +202,6 @@ Focus on ingredient overlap between recipes to reduce food waste.`,
           },
         };
       }
-
-      // // Handle prompt argument completions
-      // if (
-      //   "name" in ref &&
-      //   ref.name === "weekly-meal-planner" &&
-      //   argument.name === "cuisine"
-      // ) {
-      //   const matchingCuisines = CUISINES.filter((cuisine) =>
-      //     cuisine.startsWith(argument.value.toLowerCase())
-      //   );
-      //   return {
-      //     completion: {
-      //       values: matchingCuisines,
-      //       hasMore: false,
-      //     },
-      //   };
-      // }
 
       return {
         completion: {
