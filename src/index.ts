@@ -35,9 +35,7 @@ server.registerResource(
     },
     complete: {
       cuisine: (value) => {
-        return CUISINES.filter((cuisine) =>
-          cuisine.startsWith(value.toLowerCase())
-        );
+        return CUISINES.filter((cuisine) => cuisine.startsWith(value));
       },
     },
   }),
@@ -78,9 +76,7 @@ server.registerPrompt(
           .enum(CUISINES as [string, ...string[]])
           .describe("The cuisine to plan meals from"),
         (value) => {
-          return CUISINES.filter((cuisine) =>
-            cuisine.startsWith(value.toLowerCase())
-          );
+          return CUISINES.filter((cuisine) => cuisine.startsWith(value));
         }
       ),
     },
