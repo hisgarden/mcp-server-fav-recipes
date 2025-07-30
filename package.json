@@ -17,11 +17,16 @@
     "lint": "eslint src --ext .ts",
     "clean": "rm -rf dist"
   },
-  "keywords": ["mcp", "recipes", "meal-planning"],
+  "keywords": [
+    "mcp",
+    "recipes",
+    "meal-planning"
+  ],
   "author": "Inna",
   "license": "MIT",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.0.0"
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",

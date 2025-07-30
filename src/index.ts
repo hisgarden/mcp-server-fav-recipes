@@ -4,41 +4,26 @@
  * MCP Server for favorite recipes with cuisine-based resources and prompts
  */
 
-import { Server } from "@modelcontextprotocol/sdk/server/index.js";
-import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import {
-  CompleteRequestSchema,
-  GetPromptRequestSchema,
-  ListPromptsRequestSchema,
-  ListResourcesRequestSchema,
-  ReadResourceRequestSchema,
-} from "@modelcontextprotocol/sdk/types.js";
+  McpServer,
+  ResourceTemplate,
+} from "@modelcontextprotocol/sdk/server/mcp.js";
+import { completable } from "@modelcontextprotocol/sdk/server/completable.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { z } from "zod";
 import { CUISINES, formatRecipesAsMarkdown } from "./recipes.js";
 
-class FavoriteRecipesServer {
-  private server: Server;
+// Create an MCP server
+const server = new McpServer({
+  name: "favorite-recipes",
+  version: "1.0.0",
+});
 
-  constructor() {
-    this.server = new Server(
-      {
-        name: "favorite-recipes",
-        version: "1.0.0",
-      },
-      {
-        capabilities: {
-          resources: {},
-          prompts: {},
-          completion: {},
-        },
-      }
-    );
-
-    this.setupHandlers();
-  }
-
-  private setupHandlers() {
-    // List available resources
-    this.server.setRequestHandler(ListResourcesRequestSchema, async () => {
+// Register a dynamic resource template for recipes
+server.registerResource(
+  "recipes",
+  new ResourceTemplate("file://recipes/{cuisine}", {
+    list: async () => {
       return {
         resources: CUISINES.map((cuisine) => ({
           uri: `file://recipes/${cuisine}`,
@@ -49,113 +34,75 @@ class FavoriteRecipesServer {
           } cuisine`,
         })),
       };
-    });
+    },
+    complete: {
+      cuisine: (value) => {
+        return CUISINES.filter((cuisine) =>
+          cuisine.startsWith(value.toLowerCase())
+        );
+      },
+    },
+  }),
+  {
+    name: "Recipe Collections",
+    mimeType: "text/markdown",
+    description: "Traditional recipes organized by cuisine",
+  },
+  async (uri, variables, extra) => {
+    const cuisine = variables.cuisine as string;
 
-    // Read a resource
-    this.server.setRequestHandler(
-      ReadResourceRequestSchema,
-      async (request) => {
-        const uri = request.params.uri;
+    if (!CUISINES.includes(cuisine)) {
+      throw new Error(`Unknown cuisine: ${cuisine}`);
+    }
 
-        if (!uri.startsWith("file://recipes/")) {
-          throw new Error(`Unknown resource: ${uri}`);
+    const content = formatRecipesAsMarkdown(cuisine);
+    return {
+      contents: [
+        {
+          uri: uri.href,
+          mimeType: "text/markdown",
+          text: content,
+        },
+      ],
+    };
+  }
+);
+
+// Register the weekly meal planner prompt
+server.registerPrompt(
+  "weekly-meal-planner",
+  {
+    description:
+      "Create a weekly meal plan and grocery shopping list from cuisine-specific recipes",
+    argsSchema: {
+      cuisine: completable(
+        z
+          .enum(CUISINES as [string, ...string[]])
+          .describe("The cuisine to plan meals from"),
+        (value) => {
+          return CUISINES.filter((cuisine) =>
+            cuisine.startsWith(value.toLowerCase())
+          );
         }
+      ),
+    },
+  },
+  async ({ cuisine }) => {
+    const resourceUri = `file://recipes/${cuisine}`;
+    const recipeContent = formatRecipesAsMarkdown(cuisine);
 
-        const cuisine = uri.replace("file://recipes/", "");
-        if (!CUISINES.includes(cuisine)) {
-          throw new Error(`Unknown cuisine: ${cuisine}`);
-        }
-
-        const content = formatRecipesAsMarkdown(cuisine);
-
-        return {
-          contents: [
-            {
-              uri,
-              mimeType: "text/markdown",
-              text: content,
-            },
-          ],
-        };
-      }
-    );
-
-    // List available prompts
-    this.server.setRequestHandler(ListPromptsRequestSchema, async () => {
-      return {
-        prompts: [
-          {
-            name: "weekly-meal-planner",
-            description:
-              "Create a weekly meal plan and grocery shopping list from cuisine-specific recipes",
-            arguments: [
-              {
-                name: "cuisine",
-                description: "The cuisine to plan meals from",
-                required: true,
-              },
-            ],
-          },
-        ],
-      };
-    });
-
-    // Get a prompt
-    this.server.setRequestHandler(GetPromptRequestSchema, async (request) => {
-      const { name, arguments: args } = request.params;
-
-      if (name !== "weekly-meal-planner") {
-        throw new Error(`Unknown prompt: ${name}`);
-      }
-
-      if (!args || !args.cuisine) {
-        const available = CUISINES.join(", ");
-        return {
-          description: "Weekly meal planner",
-          messages: [
-            {
-              role: "user",
-              content: {
-                type: "text",
-                text: `Please specify a cuisine to plan your weekly meals from the following options: ${available}`,
-              },
-            },
-          ],
-        };
-      }
-
-      const cuisine = args.cuisine.toLowerCase();
-      if (!CUISINES.includes(cuisine)) {
-        const available = CUISINES.join(", ");
-        return {
-          description: "Weekly meal planner",
-          messages: [
-            {
-              role: "user",
-              content: {
-                type: "text",
-                text: `Sorry, I don't have recipes for '${cuisine}'. Available cuisines: ${available}`,
-              },
-            },
-          ],
-        };
-      }
-
-      const resourceUri = `file://recipes/${cuisine}`;
-      const recipeContent = formatRecipesAsMarkdown(cuisine);
-
-      return {
-        description: `Weekly meal planner for ${
-          cuisine.charAt(0).toUpperCase() + cuisine.slice(1)
-        } cuisine`,
-        messages: [
-          {
-            role: "user",
-            content: {
-              type: "text",
-              text: `Plan cooking for the week. I've attached the recipes from ${
-                cuisine.charAt(0).toUpperCase() + cuisine.slice(1)
-              } cuisine.
+    return {
+      description: `Weekly meal planner for ${
+        cuisine.charAt(0).toUpperCase() + cuisine.slice(1)
+      } cuisine`,
+      messages: [
+        {
+          role: "user",
+          content: {
+            type: "text",
+            text: `Plan cooking for the week. I've attached the recipes from ${
+              cuisine.charAt(0).toUpperCase() + cuisine.slice(1)
+            } cuisine.
 
 Please create:
 1. A 7-day meal plan using these recipes
@@ -165,78 +112,32 @@ Please create:
 5. Print Shopping list
 
 Focus on ingredient overlap between recipes to reduce food waste.`,
-            },
           },
-          {
-            role: "user",
-            content: {
-              type: "resource",
-              resource: {
-                uri: resourceUri,
-                mimeType: "text/markdown",
-                text: recipeContent,
-              },
-            },
-          },
-        ],
-      };
-    });
-
-    // Handle completions
-    this.server.setRequestHandler(CompleteRequestSchema, async (request) => {
-      const { ref, argument } = request.params;
-
-      // Handle prompt argument completions
-      if (
-        "name" in ref &&
-        ref.name === "weekly-meal-planner" &&
-        argument.name === "cuisine"
-      ) {
-        const matchingCuisines = CUISINES.filter((cuisine) =>
-          cuisine.startsWith(argument.value.toLowerCase())
-        );
-        return {
-          completion: {
-            values: matchingCuisines,
-            hasMore: false,
-          },
-        };
-      }
-
-      if (
-        "uri" in ref &&
-        ref.uri === "file://recipes/{cuisine}" &&
-        argument.name === "cuisine"
-      ) {
-        const matchingCuisines = CUISINES.filter((cuisine) =>
-          cuisine.startsWith(argument.value.toLowerCase())
-        );
-        return {
-          completion: {
-            values: matchingCuisines,
-            hasMore: false,
-          },
-        };
-      }
-
-      return {
-        completion: {
-          values: [],
-          hasMore: false,
         },
-      };
-    });
+        {
+          role: "user",
+          content: {
+            type: "resource",
+            resource: {
+              uri: resourceUri,
+              mimeType: "text/markdown",
+              text: recipeContent,
+            },
+          },
+        },
+      ],
+    };
   }
+);
 
-  async run() {
-    const transport = new StdioServerTransport();
-    await this.server.connect(transport);
-    console.error("Favorite Recipes MCP Server running on stdio");
-  }
+// Start the server
+async function main() {
+  const transport = new StdioServerTransport();
+  await server.connect(transport);
+  console.error("Favorite Recipes MCP Server running on stdio");
 }
 
-const server = new FavoriteRecipesServer();
-server.run().catch((error) => {
+main().catch((error) => {
   console.error("Server error:", error);
   process.exit(1);
 });
