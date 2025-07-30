@@ -23,16 +23,7 @@ const server = new McpServer({
 server.registerResource(
   "recipes",
   new ResourceTemplate("file://recipes/{cuisine}", {
-    list: async () => {
-      return {
-        resources: CUISINES.map((cuisine) => ({
-          uri: `file://recipes/${cuisine}`,
-          name: `${cuisine} Recipes`,
-          mimeType: "text/markdown",
-          description: `Traditional recipes from ${cuisine} cuisine`,
-        })),
-      };
-    },
+    list: undefined,
     complete: {
       cuisine: (value) => {
         return CUISINES.filter((cuisine) => cuisine.startsWith(value));
@@ -40,11 +31,10 @@ server.registerResource(
     },
   }),
   {
-    name: "Recipe Collections",
-    mimeType: "text/markdown",
+    title: "Cuisine-Specific Recipes",
     description: "Traditional recipes organized by cuisine",
   },
-  async (uri, variables, extra) => {
+  async (uri, variables, _extra) => {
     const cuisine = variables.cuisine as string;
 
     if (!CUISINES.includes(cuisine)) {
@@ -68,17 +58,13 @@ server.registerResource(
 server.registerPrompt(
   "weekly-meal-planner",
   {
+    title: "Weekly Meal Planner",
     description:
       "Create a weekly meal plan and grocery shopping list from cuisine-specific recipes",
     argsSchema: {
-      cuisine: completable(
-        z
-          .enum(CUISINES as [string, ...string[]])
-          .describe("The cuisine to plan meals from"),
-        (value) => {
-          return CUISINES.filter((cuisine) => cuisine.startsWith(value));
-        }
-      ),
+      cuisine: completable(z.string(), (value) => {
+        return CUISINES.filter((cuisine) => cuisine.startsWith(value));
+      }),
     },
   },
   async ({ cuisine }) => {
@@ -86,6 +72,7 @@ server.registerPrompt(
     const recipeContent = formatRecipesAsMarkdown(cuisine);
 
     return {
+      title: `Weekly Meal Planner - ${cuisine} Cuisine`,
       description: `Weekly meal planner for ${cuisine} cuisine`,
       messages: [
         {
@@ -120,11 +107,9 @@ Focus on ingredient overlap between recipes to reduce food waste.`,
   }
 );
 
-// Start the server
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error("Favorite Recipes MCP Server running on stdio");
 }
 
 main().catch((error) => {
