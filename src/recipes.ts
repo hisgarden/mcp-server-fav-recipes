@@ -14,153 +14,83 @@ export interface CuisineRecipes {
 }
 
 export const RECIPES: CuisineRecipes = {
-  italian: [
+  French: [
     {
-      name: "Spaghetti Carbonara",
+      name: "Coq au Vin",
       type: "Main Course",
       ingredients: [
-        "400g spaghetti",
-        "200g guanciale or pancetta, diced",
-        "4 large eggs",
-        "100g Pecorino Romano cheese, grated",
-        "Black pepper",
-        "Salt"
+        "1 whole chicken, cut into pieces",
+        "750ml red wine",
+        "200g bacon, diced",
+        "12 pearl onions",
+        "250g mushrooms, quartered",
+        "3 garlic cloves, minced",
+        "2 bay leaves",
+        "Fresh thyme",
+        "2 tbsp flour",
+        "2 tbsp butter",
+        "Salt and pepper"
       ],
       instructions: [
-        "Cook spaghetti in salted boiling water until al dente",
-        "Meanwhile, cook guanciale in a large pan until crispy",
-        "Whisk eggs with grated cheese and black pepper",
-        "Drain pasta, reserving pasta water",
-        "Add hot pasta to the pan with guanciale",
-        "Remove from heat and quickly mix in egg mixture",
-        "Add pasta water if needed to create creamy sauce",
-        "Serve immediately with extra cheese and pepper"
+        "Marinate chicken pieces in red wine overnight",
+        "Remove chicken, reserve wine",
+        "Cook bacon until crispy, remove and set aside",
+        "Brown chicken pieces in bacon fat",
+        "Add flour and cook 1 minute",
+        "Gradually add reserved wine",
+        "Add herbs, onions, and mushrooms",
+        "Simmer covered for 45 minutes",
+        "Finish with butter and season to taste"
       ]
     },
     {
-      name: "Margherita Pizza",
-      type: "Main Course",
-      ingredients: [
-        "Pizza dough",
-        "200ml tomato sauce",
-        "250g fresh mozzarella",
-        "Fresh basil leaves",
-        "Extra virgin olive oil",
-        "Salt"
-      ],
-      instructions: [
-        "Preheat oven to 250°C (480°F)",
-        "Roll out pizza dough on floured surface",
-        "Spread tomato sauce evenly",
-        "Add torn mozzarella pieces",
-        "Drizzle with olive oil and sprinkle salt",
-        "Bake for 10-12 minutes until crust is golden",
-        "Top with fresh basil leaves before serving"
-      ]
-    },
-    {
-      name: "Tiramisu",
-      type: "Dessert",
-      ingredients: [
-        "6 egg yolks",
-        "75g sugar",
-        "500g mascarpone",
-        "300ml strong coffee, cooled",
-        "3 tbsp coffee liqueur",
-        "2 packages ladyfinger cookies",
-        "Cocoa powder for dusting"
-      ],
-      instructions: [
-        "Whisk egg yolks and sugar until thick and pale",
-        "Add mascarpone and mix until smooth",
-        "Combine coffee and liqueur in shallow dish",
-        "Quickly dip each ladyfinger in coffee mixture",
-        "Layer soaked cookies in dish",
-        "Spread half the mascarpone mixture over cookies",
-        "Repeat layers ending with mascarpone",
-        "Refrigerate 4 hours or overnight",
-        "Dust with cocoa powder before serving"
-      ]
-    }
-  ],
-  mexican: [
-    {
-      name: "Tacos al Pastor",
-      type: "Main Course",
-      ingredients: [
-        "2 lbs pork shoulder, sliced thin",
-        "3 dried guajillo chiles",
-        "2 dried ancho chiles",
-        "1 chipotle chile in adobo",
-        "1 pineapple, peeled and cored",
-        "1 white onion, quartered",
-        "4 garlic cloves",
-        "Corn tortillas",
-        "White onion, diced",
-        "Cilantro, chopped",
-        "Lime wedges"
-      ],
-      instructions: [
-        "Toast dried chiles in dry pan until fragrant",
-        "Soak chiles in hot water for 20 minutes",
-        "Blend chiles with garlic, onion, and pineapple juice",
-        "Marinate pork in chile mixture for 2+ hours",
-        "Cook pork on hot griddle until charred",
-        "Warm tortillas on griddle",
-        "Fill tortillas with pork, diced onion, cilantro",
-        "Serve with lime wedges and grilled pineapple"
-      ]
-    },
-    {
-      name: "Guacamole",
+      name: "French Onion Soup",
       type: "Appetizer",
       ingredients: [
-        "3 ripe avocados",
-        "1 lime, juiced",
-        "1 small onion, finely diced",
-        "2 Roma tomatoes, seeded and diced",
-        "2-3 jalapeño peppers, minced",
-        "3 garlic cloves, minced",
-        "3 tbsp cilantro, chopped",
-        "Salt and pepper to taste"
+        "6 large onions, thinly sliced",
+        "4 tbsp butter",
+        "6 cups beef broth",
+        "0.5 cup dry white wine",
+        "2 bay leaves",
+        "Fresh thyme",
+        "Salt and pepper",
+        "French bread slices",
+        "Gruyère cheese, grated"
       ],
       instructions: [
-        "Cut avocados in half, remove pits",
-        "Scoop flesh into mixing bowl",
-        "Mash avocados with fork, leaving some chunks",
-        "Add lime juice immediately to prevent browning",
-        "Fold in onion, tomatoes, jalapeños, garlic",
-        "Add cilantro and season with salt and pepper",
-        "Taste and adjust seasoning",
-        "Serve immediately with tortilla chips"
+        "Cook onions in butter over low heat for 45 minutes",
+        "Add wine and cook until reduced",
+        "Add broth, bay leaves, and thyme",
+        "Simmer 30 minutes",
+        "Season with salt and pepper",
+        "Ladle into oven-safe bowls",
+        "Top with bread and cheese",
+        "Broil until cheese is bubbly and golden"
       ]
     },
     {
-      name: "Churros",
+      name: "Crème Brûlée",
       type: "Dessert",
       ingredients: [
-        "1 cup water",
-        "2.5 tbsp sugar",
-        "0.5 tsp salt",
-        "2 tbsp vegetable oil",
-        "1 cup all-purpose flour",
-        "2 eggs",
-        "Oil for frying",
-        "Cinnamon sugar for coating"
+        "2 cups heavy cream",
+        "1 vanilla bean, split and scraped",
+        "5 egg yolks",
+        "0.33 cup sugar, plus extra for topping",
+        "Torch for caramelizing"
       ],
       instructions: [
-        "Heat water, sugar, salt, and oil in saucepan",
-        "Remove from heat and stir in flour until smooth",
-        "Beat in eggs one at a time",
-        "Heat oil to 375°F (190°C)",
-        "Pipe dough through star tip into hot oil",
-        "Fry until golden brown, turning once",
-        "Drain on paper towels",
-        "Roll in cinnamon sugar while warm"
+        "Heat cream with vanilla bean and seeds",
+        "Whisk egg yolks with sugar until pale",
+        "Slowly add hot cream to egg mixture",
+        "Strain mixture to remove lumps",
+        "Pour into ramekins",
+        "Bake in water bath at 325°F for 35-40 minutes",
+        "Chill for at least 2 hours",
+        "Sprinkle sugar on top and torch until caramelized"
       ]
     }
   ],
-  indian: [
+  Indian: [
     {
       name: "Chicken Tikka Masala",
       type: "Main Course",
@@ -242,79 +172,149 @@ export const RECIPES: CuisineRecipes = {
       ]
     }
   ],
-  french: [
+  Italian: [
     {
-      name: "Coq au Vin",
+      name: "Spaghetti Carbonara",
       type: "Main Course",
       ingredients: [
-        "1 whole chicken, cut into pieces",
-        "750ml red wine",
-        "200g bacon, diced",
-        "12 pearl onions",
-        "250g mushrooms, quartered",
-        "3 garlic cloves, minced",
-        "2 bay leaves",
-        "Fresh thyme",
-        "2 tbsp flour",
-        "2 tbsp butter",
-        "Salt and pepper"
+        "400g spaghetti",
+        "200g guanciale or pancetta, diced",
+        "4 large eggs",
+        "100g Pecorino Romano cheese, grated",
+        "Black pepper",
+        "Salt"
       ],
       instructions: [
-        "Marinate chicken pieces in red wine overnight",
-        "Remove chicken, reserve wine",
-        "Cook bacon until crispy, remove and set aside",
-        "Brown chicken pieces in bacon fat",
-        "Add flour and cook 1 minute",
-        "Gradually add reserved wine",
-        "Add herbs, onions, and mushrooms",
-        "Simmer covered for 45 minutes",
-        "Finish with butter and season to taste"
+        "Cook spaghetti in salted boiling water until al dente",
+        "Meanwhile, cook guanciale in a large pan until crispy",
+        "Whisk eggs with grated cheese and black pepper",
+        "Drain pasta, reserving pasta water",
+        "Add hot pasta to the pan with guanciale",
+        "Remove from heat and quickly mix in egg mixture",
+        "Add pasta water if needed to create creamy sauce",
+        "Serve immediately with extra cheese and pepper"
       ]
     },
     {
-      name: "French Onion Soup",
-      type: "Appetizer",
+      name: "Margherita Pizza",
+      type: "Main Course",
       ingredients: [
-        "6 large onions, thinly sliced",
-        "4 tbsp butter",
-        "6 cups beef broth",
-        "0.5 cup dry white wine",
-        "2 bay leaves",
-        "Fresh thyme",
-        "Salt and pepper",
-        "French bread slices",
-        "Gruyère cheese, grated"
+        "Pizza dough",
+        "200ml tomato sauce",
+        "250g fresh mozzarella",
+        "Fresh basil leaves",
+        "Extra virgin olive oil",
+        "Salt"
       ],
       instructions: [
-        "Cook onions in butter over low heat for 45 minutes",
-        "Add wine and cook until reduced",
-        "Add broth, bay leaves, and thyme",
-        "Simmer 30 minutes",
-        "Season with salt and pepper",
-        "Ladle into oven-safe bowls",
-        "Top with bread and cheese",
-        "Broil until cheese is bubbly and golden"
+        "Preheat oven to 250°C (480°F)",
+        "Roll out pizza dough on floured surface",
+        "Spread tomato sauce evenly",
+        "Add torn mozzarella pieces",
+        "Drizzle with olive oil and sprinkle salt",
+        "Bake for 10-12 minutes until crust is golden",
+        "Top with fresh basil leaves before serving"
       ]
     },
     {
-      name: "Crème Brûlée",
+      name: "Tiramisu",
       type: "Dessert",
       ingredients: [
-        "2 cups heavy cream",
-        "1 vanilla bean, split and scraped",
-        "5 egg yolks",
-        "0.33 cup sugar, plus extra for topping",
-        "Torch for caramelizing"
+        "6 egg yolks",
+        "75g sugar",
+        "500g mascarpone",
+        "300ml strong coffee, cooled",
+        "3 tbsp coffee liqueur",
+        "2 packages ladyfinger cookies",
+        "Cocoa powder for dusting"
       ],
       instructions: [
-        "Heat cream with vanilla bean and seeds",
-        "Whisk egg yolks with sugar until pale",
-        "Slowly add hot cream to egg mixture",
-        "Strain mixture to remove lumps",
-        "Pour into ramekins",
-        "Bake in water bath at 325°F for 35-40 minutes",
-        "Chill for at least 2 hours",
-        "Sprinkle sugar on top and torch until caramelized"
+        "Whisk egg yolks and sugar until thick and pale",
+        "Add mascarpone and mix until smooth",
+        "Combine coffee and liqueur in shallow dish",
+        "Quickly dip each ladyfinger in coffee mixture",
+        "Layer soaked cookies in dish",
+        "Spread half the mascarpone mixture over cookies",
+        "Repeat layers ending with mascarpone",
+        "Refrigerate 4 hours or overnight",
+        "Dust with cocoa powder before serving"
+      ]
+    }
+  ],
+  Mexican: [
+    {
+      name: "Tacos al Pastor",
+      type: "Main Course",
+      ingredients: [
+        "2 lbs pork shoulder, sliced thin",
+        "3 dried guajillo chiles",
+        "2 dried ancho chiles",
+        "1 chipotle chile in adobo",
+        "1 pineapple, peeled and cored",
+        "1 white onion, quartered",
+        "4 garlic cloves",
+        "Corn tortillas",
+        "White onion, diced",
+        "Cilantro, chopped",
+        "Lime wedges"
+      ],
+      instructions: [
+        "Toast dried chiles in dry pan until fragrant",
+        "Soak chiles in hot water for 20 minutes",
+        "Blend chiles with garlic, onion, and pineapple juice",
+        "Marinate pork in chile mixture for 2+ hours",
+        "Cook pork on hot griddle until charred",
+        "Warm tortillas on griddle",
+        "Fill tortillas with pork, diced onion, cilantro",
+        "Serve with lime wedges and grilled pineapple"
+      ]
+    },
+    {
+      name: "Guacamole",
+      type: "Appetizer",
+      ingredients: [
+        "3 ripe avocados",
+        "1 lime, juiced",
+        "1 small onion, finely diced",
+        "2 Roma tomatoes, seeded and diced",
+        "2-3 jalapeño peppers, minced",
+        "3 garlic cloves, minced",
+        "3 tbsp cilantro, chopped",
+        "Salt and pepper to taste"
+      ],
+      instructions: [
+        "Cut avocados in half, remove pits",
+        "Scoop flesh into mixing bowl",
+        "Mash avocados with fork, leaving some chunks",
+        "Add lime juice immediately to prevent browning",
+        "Fold in onion, tomatoes, jalapeños, garlic",
+        "Add cilantro and season with salt and pepper",
+        "Taste and adjust seasoning",
+        "Serve immediately with tortilla chips"
+      ]
+    },
+    {
+      name: "Churros",
+      type: "Dessert",
+      ingredients: [
+        "1 cup water",
+        "2.5 tbsp sugar",
+        "0.5 tsp salt",
+        "2 tbsp vegetable oil",
+        "1 cup all-purpose flour",
+        "2 eggs",
+        "Oil for frying",
+        "Cinnamon sugar for coating"
+      ],
+      instructions: [
+        "Heat water, sugar, salt, and oil in saucepan",
+        "Remove from heat and stir in flour until smooth",
+        "Beat in eggs one at a time",
+        "Heat oil to 375°F (190°C)",
+        "Pipe dough through star tip into hot oil",
+        "Fry until golden brown, turning once",
+        "Drain on paper towels",
+        "Roll in cinnamon sugar while warm"
       ]
     }
   ]
@@ -328,7 +328,7 @@ export function formatRecipesAsMarkdown(cuisine: string): string {
     return `No recipes found for ${cuisine}`;
   }
 
-  let markdown = `# ${cuisine.charAt(0).toUpperCase() + cuisine.slice(1)} Recipes\n\n`;
+  let markdown = `# ${cuisine} Recipes\n\n`;
   
   for (const recipe of recipes) {
     markdown += `## ${recipe.name}\n`;

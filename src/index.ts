@@ -27,11 +27,9 @@ server.registerResource(
       return {
         resources: CUISINES.map((cuisine) => ({
           uri: `file://recipes/${cuisine}`,
-          name: `${cuisine.charAt(0).toUpperCase() + cuisine.slice(1)} Recipes`,
+          name: `${cuisine} Recipes`,
           mimeType: "text/markdown",
-          description: `Traditional recipes from ${
-            cuisine.charAt(0).toUpperCase() + cuisine.slice(1)
-          } cuisine`,
+          description: `Traditional recipes from ${cuisine} cuisine`,
         })),
       };
     },
@@ -92,17 +90,13 @@ server.registerPrompt(
     const recipeContent = formatRecipesAsMarkdown(cuisine);
 
     return {
-      description: `Weekly meal planner for ${
-        cuisine.charAt(0).toUpperCase() + cuisine.slice(1)
-      } cuisine`,
+      description: `Weekly meal planner for ${cuisine} cuisine`,
       messages: [
         {
           role: "user",
           content: {
             type: "text",
-            text: `Plan cooking for the week. I've attached the recipes from ${
-              cuisine.charAt(0).toUpperCase() + cuisine.slice(1)
-            } cuisine.
+            text: `Plan cooking for the week. I've attached the recipes from ${cuisine} cuisine.
 
 Please create:
 1. A 7-day meal plan using these recipes
