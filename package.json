@@ -46,22 +46,21 @@
     "url": "https://github.com/hisgarden/mcp-server-fav-recipes/issues"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@modelcontextprotocol/sdk": "^1.18.1",
     "zod": "^3.25.76"
   },
   "devDependencies": {
+    "@cyclonedx/cyclonedx-npm": "^3.0.0",
     "@types/node": "^20.0.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
-    "eslint": "^8.0.0",
-    "tsx": "^4.0.0",
-    "typescript": "^5.0.0",
     "audit-ci": "^6.0.0",
-    "npm-audit-resolver": "^4.0.0",
+    "eslint": "^8.0.0",
     "husky": "^8.0.0",
     "lint-staged": "^15.0.0",
-    "@cyclonedx/cyclonedx-npm": "^3.0.0",
-    "prettier": "^3.0.0"
+    "prettier": "^3.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
   },
   "engines": {
     "node": ">=18"

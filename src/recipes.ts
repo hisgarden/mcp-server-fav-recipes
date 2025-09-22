@@ -506,6 +506,88 @@ export const RECIPES: CuisineRecipes = {
         "Drizzle with soy sauce and sesame oil in final moments",
         "Garnish with cilantro and serve immediately with sweet chili sauce"
       ]
+    },
+    {
+      name: "🧋 Hong Kong Milk Tea (港式奶茶)",
+      type: "Beverage",
+      ingredients: [
+        "4 tbsp Ceylon black tea leaves (錫蘭紅茶)",
+        "2 tbsp Lipton black tea leaves (立頓紅茶)",
+        "1 cup water (水)",
+        "1 cup evaporated milk (淡奶)",
+        "2-3 tbsp sugar (糖)",
+        "1/4 tsp salt (鹽)"
+      ],
+      instructions: [
+        "Mix Ceylon and Lipton tea leaves in a tea sock or fine strainer (traditional Hong Kong tea blend)",
+        "Bring water to rolling boil in a large pot",
+        "Add tea leaves and boil for 3-4 minutes (Hong Kong 'pulling' technique)",
+        "Reduce heat and simmer for 15-20 minutes until tea is very strong and dark",
+        "Remove tea leaves and return tea to pot",
+        "Add salt to enhance flavor (secret Hong Kong technique)",
+        "Heat evaporated milk in separate pot until warm (never boil)",
+        "Pour hot tea from height into cup to create froth (traditional 'pulling' method)",
+        "Add warm evaporated milk gradually while stirring",
+        "Add sugar to taste and serve immediately while hot"
+      ]
+    },
+    {
+      name: "🍞 Hong Kong French Toast (港式西多士)",
+      type: "Dessert",
+      ingredients: [
+        "4 slices thick white bread (厚白麵包)",
+        "2 tbsp smooth peanut butter (花生醬)",
+        "2 tbsp condensed milk (煉奶)",
+        "2 large eggs (雞蛋)",
+        "1/4 cup milk (牛奶)",
+        "1 tbsp sugar (糖)",
+        "1/2 tsp vanilla extract (香草精)",
+        "4 tbsp butter (牛油)",
+        "Maple syrup for serving (楓糖漿)",
+        "Powdered sugar for dusting (糖粉)"
+      ],
+      instructions: [
+        "Trim crusts from bread slices (traditional Hong Kong style)",
+        "Spread peanut butter on two slices, condensed milk on the other two",
+        "Sandwich slices together with fillings inside",
+        "Beat eggs with milk, sugar, and vanilla extract in shallow dish",
+        "Heat butter in large pan over medium heat",
+        "Dip each sandwich in egg mixture, coating both sides thoroughly",
+        "Let excess egg mixture drip off before cooking",
+        "Fry sandwiches in hot butter until golden brown on both sides (about 2-3 minutes per side)",
+        "Drain on paper towels to remove excess oil",
+        "Cut diagonally and serve hot with maple syrup and powdered sugar"
+      ]
+    },
+    {
+      name: "🥚 Hong Kong Egg Waffles (雞蛋仔)",
+      type: "Dessert",
+      ingredients: [
+        "1 cup all-purpose flour (麵粉)",
+        "1/2 cup sugar (糖)",
+        "1/2 tsp baking powder (泡打粉)",
+        "1/4 tsp salt (鹽)",
+        "2 large eggs (雞蛋)",
+        "1/2 cup milk (牛奶)",
+        "1/4 cup water (水)",
+        "2 tbsp vegetable oil (植物油)",
+        "1 tsp vanilla extract (香草精)",
+        "1/4 tsp pandan extract (optional) (班蘭精)"
+      ],
+      instructions: [
+        "Sift flour, sugar, baking powder, and salt into large bowl",
+        "Make well in center and add eggs, milk, water, oil, and extracts",
+        "Whisk until smooth batter forms (no lumps - Hong Kong technique)",
+        "Let batter rest for 30 minutes (essential for authentic texture)",
+        "Preheat egg waffle pan over medium heat (traditional cast iron pan)",
+        "Lightly grease both sides of pan with oil",
+        "Pour batter into bottom pan, filling each cavity 3/4 full",
+        "Close pan and flip immediately",
+        "Cook for 2-3 minutes, then flip again",
+        "Continue cooking and flipping every 30 seconds until golden brown and crispy",
+        "Remove from pan and let cool slightly before serving",
+        "Best eaten fresh and warm (traditional Hong Kong street food style)"
+      ]
     }
   ],
   Vietnamese: [
