@@ -41,6 +41,18 @@ npm install
 npm run build
 ```
 
+### ChatGPT Desktop Integration
+
+For ChatGPT Desktop on macOS, see the comprehensive setup guide:
+- **[ChatGPT MCP Setup Guide](../CHATGPT_MCP_SETUP.md)** - Complete setup instructions
+- **[Automated Setup Script](../setup-chatgpt-mcp.sh)** - One-click setup script
+
+Quick setup:
+```bash
+# Run the automated setup script
+./setup-chatgpt-mcp.sh
+```
+
 ### Development
 
 ```sh
