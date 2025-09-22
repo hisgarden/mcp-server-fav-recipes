@@ -6,7 +6,7 @@ This guide will help you integrate the Favorite Recipes MCP server with Cursor I
 
 The MCP server has been tested and is working correctly:
 - ✅ Server starts without errors
-- ✅ All 6 cuisines (French, Thai, Italian, Mexican, Chinese, Vietnamese) are available
+- ✅ All 7 cuisines (French, Thai, Italian, Mexican, Chinese, Vietnamese, Japanese) are available
 - ✅ Recipe formatting is working properly
 - ✅ Weekly meal planner prompt is ready
 
@@ -50,6 +50,7 @@ Access traditional recipes by cuisine using these resource URIs:
 - `file://recipes/Mexican` - Mexican cuisine recipes
 - `file://recipes/Chinese` - Chinese cuisine recipes
 - `file://recipes/Vietnamese` - Vietnamese cuisine recipes
+- `file://recipes/Japanese` - Japanese cuisine recipes
 
 ### Weekly Meal Planner Prompt
 

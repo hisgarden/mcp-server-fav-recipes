@@ -507,6 +507,88 @@ export const RECIPES: CuisineRecipes = {
         "Serve chilled"
       ]
     }
+  ],
+  Japanese: [
+    {
+      name: "Unagi Donburi (Eel over Rice)",
+      type: "Main Course",
+      ingredients: [
+        "2 pieces fresh eel fillets (unagi)",
+        "2 cups Japanese short-grain rice",
+        "1/4 cup mirin (sweet rice wine)",
+        "1/4 cup soy sauce",
+        "2 tbsp sugar",
+        "1 tbsp sake",
+        "2 tbsp vegetable oil",
+        "2 green onions, thinly sliced",
+        "1 tsp sesame seeds",
+        "Pickled ginger (gari) for garnish",
+        "Nori (seaweed) strips for garnish"
+      ],
+      instructions: [
+        "Cook Japanese rice according to package directions",
+        "Prepare eel sauce by combining mirin, soy sauce, sugar, and sake",
+        "Heat sauce in small saucepan until sugar dissolves",
+        "Heat oil in large skillet over medium-high heat",
+        "Place eel fillets skin-side down and cook for 3-4 minutes",
+        "Flip eel and brush with sauce, cook for another 2-3 minutes",
+        "Brush eel with more sauce and cook until glazed",
+        "Slice eel into bite-sized pieces",
+        "Place hot rice in bowls",
+        "Arrange eel pieces on top of rice",
+        "Drizzle with remaining sauce",
+        "Garnish with green onions, sesame seeds, pickled ginger, and nori"
+      ]
+    },
+    {
+      name: "Miso Soup",
+      type: "Appetizer",
+      ingredients: [
+        "4 cups dashi (Japanese stock)",
+        "3 tbsp white miso paste",
+        "1/2 block silken tofu, cubed",
+        "2 green onions, thinly sliced",
+        "1 sheet nori, cut into strips",
+        "1 tsp wakame seaweed (optional)"
+      ],
+      instructions: [
+        "Heat dashi in a saucepan over medium heat",
+        "Add wakame seaweed if using and let it rehydrate",
+        "Place miso paste in a small bowl",
+        "Add a ladle of hot dashi to the miso and whisk until smooth",
+        "Add miso mixture back to the saucepan",
+        "Add tofu cubes and heat gently (do not boil)",
+        "Ladle soup into bowls",
+        "Garnish with green onions and nori strips",
+        "Serve immediately"
+      ]
+    },
+    {
+      name: "Matcha Ice Cream",
+      type: "Dessert",
+      ingredients: [
+        "2 cups heavy cream",
+        "1 cup whole milk",
+        "3/4 cup sugar",
+        "4 egg yolks",
+        "2 tbsp matcha powder",
+        "1 tsp vanilla extract",
+        "Pinch of salt"
+      ],
+      instructions: [
+        "Heat cream and milk in saucepan until steaming",
+        "Whisk egg yolks with sugar until pale and thick",
+        "Sift matcha powder to remove lumps",
+        "Gradually add hot cream mixture to egg yolks, whisking constantly",
+        "Return mixture to saucepan and cook over low heat until thickened",
+        "Strain custard through fine mesh sieve",
+        "Whisk in matcha powder, vanilla, and salt",
+        "Chill custard completely in refrigerator",
+        "Churn in ice cream maker according to manufacturer's instructions",
+        "Freeze until firm, at least 4 hours",
+        "Serve with additional matcha powder dusted on top"
+      ]
+    }
   ]
 };
 

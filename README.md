@@ -4,7 +4,7 @@ An MCP (Model Context Protocol) server that provides access to traditional recip
 
 ## Features
 
-- **Cuisine-based Recipe Resources**: Access recipes organized by cuisine (French, Thai, Italian, Mexican, Chinese, Vietnamese)
+- **Cuisine-based Recipe Resources**: Access recipes organized by cuisine (French, Thai, Italian, Mexican, Chinese, Vietnamese, Japanese)
 - **Weekly Meal Planner Prompt**: Generate meal plans and shopping lists from cuisine-specific recipes
 - **Dynamic Resource Templates**: Composable resource URIs for different cuisines
 - **Comprehensive Recipe Database**: Traditional recipes with detailed ingredients and instructions
@@ -17,6 +17,7 @@ An MCP (Model Context Protocol) server that provides access to traditional recip
 - **Mexican**: Tacos al Pastor, Guacamole, Churros
 - **Chinese**: Kung Pao Chicken, Char Siu (Chinese BBQ Pork), Egg Tarts (Dan Tat)
 - **Vietnamese**: Pho Bo (Beef Noodle Soup), Banh Mi, Che Ba Mau (Three Color Dessert)
+- **Japanese**: Unagi Donburi (Eel over Rice), Miso Soup, Matcha Ice Cream
 
 ## Setup
 
