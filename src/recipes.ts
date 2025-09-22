@@ -16,7 +16,7 @@ export interface CuisineRecipes {
 export const RECIPES: CuisineRecipes = {
   French: [
     {
-      name: "Coq au Vin",
+      name: "🍷 Coq au Vin",
       type: "Main Course",
       ingredients: [
         "1 whole chicken, cut into pieces",
@@ -44,7 +44,7 @@ export const RECIPES: CuisineRecipes = {
       ]
     },
     {
-      name: "French Onion Soup",
+      name: "🧅 French Onion Soup",
       type: "Appetizer",
       ingredients: [
         "6 large onions, thinly sliced",
@@ -69,7 +69,7 @@ export const RECIPES: CuisineRecipes = {
       ]
     },
     {
-      name: "Crème Brûlée",
+      name: "🍮 Crème Brûlée",
       type: "Dessert",
       ingredients: [
         "2 cups heavy cream",
@@ -92,7 +92,7 @@ export const RECIPES: CuisineRecipes = {
   ],
   Thai: [
     {
-      name: "Pad Thai",
+      name: "🍝 Pad Thai",
       type: "Main Course",
       ingredients: [
         "8 oz rice noodles",
@@ -124,7 +124,7 @@ export const RECIPES: CuisineRecipes = {
       ]
     },
     {
-      name: "Tom Yum Goong",
+      name: "🦐 Tom Yum Goong",
       type: "Appetizer",
       ingredients: [
         "4 cups chicken or shrimp stock",
@@ -152,7 +152,7 @@ export const RECIPES: CuisineRecipes = {
       ]
     },
     {
-      name: "Mango Sticky Rice",
+      name: "🥭 Mango Sticky Rice",
       type: "Dessert",
       ingredients: [
         "1 cup glutinous rice",
@@ -178,7 +178,7 @@ export const RECIPES: CuisineRecipes = {
   ],
   Italian: [
     {
-      name: "Spaghetti Carbonara",
+      name: "🍝 Spaghetti Carbonara",
       type: "Main Course",
       ingredients: [
         "400g spaghetti",
@@ -200,7 +200,7 @@ export const RECIPES: CuisineRecipes = {
       ]
     },
     {
-      name: "Margherita Pizza",
+      name: "🍕 Margherita Pizza",
       type: "Main Course",
       ingredients: [
         "Pizza dough",
@@ -221,7 +221,7 @@ export const RECIPES: CuisineRecipes = {
       ]
     },
     {
-      name: "Tiramisu",
+      name: "☕ Tiramisu",
       type: "Dessert",
       ingredients: [
         "6 egg yolks",
@@ -247,7 +247,7 @@ export const RECIPES: CuisineRecipes = {
   ],
   Mexican: [
     {
-      name: "Tacos al Pastor",
+      name: "🌮 Tacos al Pastor",
       type: "Main Course",
       ingredients: [
         "2 lbs pork shoulder, sliced thin",
@@ -274,7 +274,7 @@ export const RECIPES: CuisineRecipes = {
       ]
     },
     {
-      name: "Guacamole",
+      name: "🥑 Guacamole",
       type: "Appetizer",
       ingredients: [
         "3 ripe avocados",
@@ -298,7 +298,7 @@ export const RECIPES: CuisineRecipes = {
       ]
     },
     {
-      name: "Churros",
+      name: "🍩 Churros",
       type: "Dessert",
       ingredients: [
         "1 cup water",
@@ -324,92 +324,193 @@ export const RECIPES: CuisineRecipes = {
   ],
   Chinese: [
     {
-      name: "Kung Pao Chicken",
+      name: "🥢 Kung Pao Chicken (宫保鸡丁)",
       type: "Main Course",
       ingredients: [
-        "1 lb chicken breast, diced",
-        "2 tbsp soy sauce",
-        "1 tbsp rice wine",
-        "1 tsp cornstarch",
-        "2 tbsp vegetable oil",
-        "6-8 dried red chilies",
-        "1 tbsp Sichuan peppercorns",
-        "3 garlic cloves, minced",
-        "1 inch ginger, minced",
-        "1 bell pepper, diced",
-        "1/2 cup roasted peanuts",
-        "2 tbsp hoisin sauce",
-        "1 tbsp dark soy sauce",
-        "1 tsp sugar",
-        "2 green onions, chopped"
+        "1 lb chicken breast, diced (鸡胸肉)",
+        "2 tbsp soy sauce (生抽)",
+        "1 tbsp rice wine (料酒)",
+        "1 tsp cornstarch (生粉)",
+        "2 tbsp vegetable oil (植物油)",
+        "6-8 dried red chilies (干辣椒)",
+        "1 tbsp Sichuan peppercorns (花椒)",
+        "3 garlic cloves, minced (蒜蓉)",
+        "1 inch ginger, minced (姜蓉)",
+        "1 bell pepper, diced (甜椒)",
+        "1/2 cup roasted peanuts (花生米)",
+        "2 tbsp hoisin sauce (海鲜酱)",
+        "1 tbsp dark soy sauce (老抽)",
+        "1 tsp sugar (糖)",
+        "2 green onions, chopped (葱花)"
       ],
       instructions: [
-        "Marinate chicken with soy sauce, rice wine, and cornstarch for 15 minutes",
-        "Heat oil in wok over high heat",
-        "Add dried chilies and Sichuan peppercorns, stir-fry until fragrant",
-        "Add chicken and stir-fry until cooked through",
-        "Add garlic, ginger, and bell pepper",
-        "Stir-fry for 2-3 minutes",
-        "Add peanuts and sauce mixture",
-        "Toss everything together and garnish with green onions"
+        "Prepare chicken using Cantonese 'velveting' technique: marinate diced chicken with soy sauce, rice wine, and cornstarch for 15 minutes",
+        "Heat wok over high heat until smoking hot (wok hei technique)",
+        "Add oil and swirl to coat wok surface completely",
+        "Add dried chilies and Sichuan peppercorns, stir-fry until fragrant (about 30 seconds)",
+        "Add chicken and stir-fry using 'chao' technique - quick tossing motions until 80% cooked",
+        "Push ingredients to sides of wok, add garlic and ginger to center",
+        "Add bell pepper and continue stir-frying with rapid tossing motions",
+        "Create sauce mixture: combine hoisin sauce, dark soy sauce, and sugar",
+        "Add sauce mixture and peanuts, toss everything together quickly",
+        "Finish with green onions and serve immediately while hot (Cantonese tradition)"
       ]
     },
     {
-      name: "Char Siu (Chinese BBQ Pork)",
+      name: "🥩 Char Siu (叉烧) - Chinese BBQ Pork",
       type: "Main Course",
       ingredients: [
-        "2 lbs pork shoulder or tenderloin",
-        "3 tbsp hoisin sauce",
-        "2 tbsp soy sauce",
-        "2 tbsp honey",
-        "1 tbsp rice wine",
-        "1 tbsp five-spice powder",
-        "2 garlic cloves, minced",
-        "1 inch ginger, minced",
-        "1 tbsp red food coloring (optional)",
-        "2 tbsp vegetable oil"
+        "2 lbs pork shoulder or tenderloin (猪肉)",
+        "3 tbsp hoisin sauce (海鲜酱)",
+        "2 tbsp soy sauce (生抽)",
+        "2 tbsp honey (蜂蜜)",
+        "1 tbsp rice wine (料酒)",
+        "1 tbsp five-spice powder (五香粉)",
+        "2 garlic cloves, minced (蒜蓉)",
+        "1 inch ginger, minced (姜蓉)",
+        "1 tbsp red food coloring (optional) (红曲粉)",
+        "2 tbsp vegetable oil (植物油)"
       ],
       instructions: [
-        "Cut pork into long strips about 2 inches wide",
-        "Mix all marinade ingredients in a bowl",
-        "Coat pork strips with marinade and refrigerate overnight",
-        "Preheat oven to 400°F (200°C)",
-        "Place pork on wire rack over baking sheet",
-        "Roast for 20 minutes, then reduce heat to 350°F (175°C)",
-        "Continue roasting for 30-40 minutes, basting with marinade",
-        "Let rest 10 minutes before slicing"
+        "Cut pork into long strips about 2 inches wide (traditional Cantonese char siu shape)",
+        "Prepare marinade using traditional Cantonese method: mix hoisin sauce, soy sauce, honey, rice wine, five-spice powder, garlic, and ginger",
+        "Score pork strips lightly on both sides to help marinade penetrate",
+        "Coat pork strips thoroughly with marinade and refrigerate overnight (minimum 8 hours for authentic flavor)",
+        "Preheat oven to 400°F (200°C) - high initial heat for Cantonese-style char siu",
+        "Place pork on wire rack over baking sheet to allow air circulation",
+        "Roast for 20 minutes to develop caramelized exterior, then reduce heat to 350°F (175°C)",
+        "Continue roasting for 30-40 minutes, basting with marinade every 10 minutes",
+        "Final basting: brush with honey for authentic Cantonese glaze",
+        "Let rest 10 minutes before slicing against the grain (Cantonese tradition)"
       ]
     },
     {
-      name: "Egg Tarts (Dan Tat)",
+      name: "🥧 Egg Tarts (蛋挞)",
       type: "Dessert",
       ingredients: [
-        "1 cup all-purpose flour",
-        "1/2 cup butter, cold and cubed",
-        "1/4 cup ice water",
-        "1/2 tsp salt",
-        "4 large eggs",
-        "1/2 cup sugar",
-        "1 1/2 cups milk",
-        "1 tsp vanilla extract"
+        "1 cup all-purpose flour (面粉)",
+        "1/2 cup butter, cold and cubed (黄油)",
+        "1/4 cup ice water (冰水)",
+        "1/2 tsp salt (盐)",
+        "4 large eggs (鸡蛋)",
+        "1/2 cup sugar (糖)",
+        "1 1/2 cups milk (牛奶)",
+        "1 tsp vanilla extract (香草精)"
       ],
       instructions: [
-        "Make pastry: mix flour and salt, cut in butter until crumbly",
-        "Add ice water gradually until dough forms",
-        "Chill dough for 30 minutes",
-        "Roll out and cut into circles for tart shells",
-        "Preheat oven to 400°F (200°C)",
-        "Make custard: whisk eggs, sugar, milk, and vanilla",
-        "Strain custard mixture",
-        "Fill tart shells with custard",
-        "Bake for 15-20 minutes until custard is set",
-        "Cool before serving"
+        "Make pastry using Cantonese 'laminated' technique: mix flour and salt, cut in cold butter until crumbly",
+        "Add ice water gradually until dough just comes together (don't overwork - Cantonese pastry principle)",
+        "Chill dough for 30 minutes to relax gluten (essential for flaky Cantonese pastry)",
+        "Roll out dough to 1/8 inch thickness and cut into circles for tart shells",
+        "Preheat oven to 400°F (200°C) - high heat for authentic Cantonese egg tarts",
+        "Make custard using traditional Cantonese method: whisk eggs gently with sugar until dissolved",
+        "Add warm milk gradually while whisking (prevents curdling - Cantonese technique)",
+        "Strain custard mixture through fine sieve for silky smooth texture",
+        "Fill tart shells 3/4 full with custard (Cantonese tradition)",
+        "Bake for 15-20 minutes until custard is set but still slightly jiggly in center",
+        "Cool on wire rack before serving (allows pastry to crisp properly)"
+      ]
+    },
+    {
+      name: "🍜 Beef Noodle Soup (台湾牛肉面)",
+      type: "Main Course",
+      ingredients: [
+        "2 lbs beef shank or brisket, cut into chunks (牛肉)",
+        "1 lb fresh wheat noodles (面条)",
+        "4 cups beef broth (牛肉汤)",
+        "2 cups water (水)",
+        "3 tbsp soy sauce (生抽)",
+        "2 tbsp dark soy sauce (老抽)",
+        "2 tbsp rice wine (料酒)",
+        "1 tbsp sugar (糖)",
+        "1 tbsp doubanjiang (fermented bean paste) (豆瓣酱)",
+        "1 large onion, quartered (洋葱)",
+        "4 garlic cloves, smashed (蒜瓣)",
+        "2-inch piece ginger, sliced (姜片)",
+        "2 star anise (八角)",
+        "1 cinnamon stick (桂皮)",
+        "1 tsp Sichuan peppercorns (花椒)",
+        "2 green onions, cut into 2-inch pieces (葱段)",
+        "1 bunch bok choy or Chinese cabbage (白菜)",
+        "Pickled mustard greens for garnish (酸菜)",
+        "Cilantro for garnish (香菜)"
+      ],
+      instructions: [
+        "Blanch beef chunks in boiling water for 5 minutes using Cantonese 'chui' technique, then rinse thoroughly",
+        "Heat oil in large pot over medium-high heat, add onion, garlic, and ginger",
+        "Add doubanjiang and stir-fry until fragrant (about 1 minute - Cantonese 'bao' technique)",
+        "Add beef chunks and brown on all sides using 'chao' technique",
+        "Add soy sauces, rice wine, sugar, and spices, stir to combine",
+        "Pour in broth and water, bring to rolling boil then reduce to gentle simmer",
+        "Simmer for 2-3 hours until beef is fork-tender (Cantonese slow-cooking tradition)",
+        "Cook noodles according to package directions, rinse under cold water to stop cooking",
+        "Blanch bok choy in the soup for 30 seconds (Cantonese 'chui' technique for vegetables)",
+        "Serve noodles in bowls with beef and hot broth",
+        "Garnish with pickled mustard greens and cilantro (traditional Cantonese finishing touch)"
+      ]
+    },
+    {
+      name: "🧋 Bubble Tea (珍珠奶茶)",
+      type: "Beverage",
+      ingredients: [
+        "1/2 cup tapioca pearls (boba) (珍珠)",
+        "2 cups water (水)",
+        "1/4 cup brown sugar (红糖)",
+        "2 cups strong black tea, chilled (红茶)",
+        "1/2 cup milk or non-dairy milk (牛奶)",
+        "2 tbsp simple syrup (糖浆)",
+        "Ice cubes (冰块)"
+      ],
+      instructions: [
+        "Cook tapioca pearls in boiling water for 15-20 minutes",
+        "Drain and rinse pearls under cold water",
+        "Make brown sugar syrup by heating brown sugar with 2 tbsp water",
+        "Add cooked pearls to syrup and let soak for 10 minutes",
+        "Brew strong black tea and chill completely",
+        "Add simple syrup to taste",
+        "Fill glass with ice cubes",
+        "Add brown sugar pearls to bottom of glass",
+        "Pour tea over ice, leaving room for milk",
+        "Add milk and stir gently",
+        "Serve with wide straw for drinking pearls"
+      ]
+    },
+    {
+      name: "🦪 Oyster Omelette (蚵仔煎)",
+      type: "Main Course",
+      ingredients: [
+        "1 cup fresh oysters, cleaned (生蚝)",
+        "4 large eggs (鸡蛋)",
+        "1/2 cup sweet potato starch (地瓜粉)",
+        "1/4 cup water (水)",
+        "2 tbsp vegetable oil (植物油)",
+        "2 cloves garlic, minced (蒜蓉)",
+        "1/2 cup bean sprouts (豆芽)",
+        "2 green onions, chopped (葱花)",
+        "1 tbsp soy sauce (生抽)",
+        "1 tsp sesame oil (香油)",
+        "Cilantro for garnish (香菜)",
+        "Sweet chili sauce for serving (甜辣酱)"
+      ],
+      instructions: [
+        "Mix sweet potato starch with water to make smooth batter (Cantonese 'ho' technique for even consistency)",
+        "Heat oil in large non-stick pan over medium-high heat until shimmering",
+        "Add garlic and stir-fry until fragrant using 'bao' technique (about 30 seconds)",
+        "Add oysters and cook for 1 minute, stirring gently to avoid breaking",
+        "Pour batter over oysters and spread evenly using circular motions",
+        "Beat eggs lightly and pour over the batter in a spiral pattern",
+        "Add bean sprouts and green onions, distributing evenly",
+        "Cook until bottom is golden and crispy (about 3-4 minutes)",
+        "Flip carefully using two spatulas (Cantonese 'fan' technique)",
+        "Cook other side until golden and crispy",
+        "Drizzle with soy sauce and sesame oil in final moments",
+        "Garnish with cilantro and serve immediately with sweet chili sauce"
       ]
     }
   ],
   Vietnamese: [
     {
-      name: "Pho Bo (Beef Noodle Soup)",
+      name: "🍲 Pho Bo (Beef Noodle Soup)",
       type: "Main Course",
       ingredients: [
         "2 lbs beef bones",
@@ -448,7 +549,7 @@ export const RECIPES: CuisineRecipes = {
       ]
     },
     {
-      name: "Banh Mi",
+      name: "🥖 Banh Mi",
       type: "Main Course",
       ingredients: [
         "1 baguette or Vietnamese bread",
@@ -479,7 +580,7 @@ export const RECIPES: CuisineRecipes = {
       ]
     },
     {
-      name: "Che Ba Mau (Three Color Dessert)",
+      name: "🍧 Che Ba Mau (Three Color Dessert)",
       type: "Dessert",
       ingredients: [
         "1/2 cup mung beans",
@@ -510,7 +611,7 @@ export const RECIPES: CuisineRecipes = {
   ],
   Japanese: [
     {
-      name: "Unagi Donburi (Eel over Rice)",
+      name: "🍱 Unagi Donburi (Eel over Rice)",
       type: "Main Course",
       ingredients: [
         "2 pieces fresh eel fillets (unagi)",
@@ -541,7 +642,7 @@ export const RECIPES: CuisineRecipes = {
       ]
     },
     {
-      name: "Miso Soup",
+      name: "🍲 Miso Soup",
       type: "Appetizer",
       ingredients: [
         "4 cups dashi (Japanese stock)",
@@ -564,7 +665,7 @@ export const RECIPES: CuisineRecipes = {
       ]
     },
     {
-      name: "Matcha Ice Cream",
+      name: "🍵 Matcha Ice Cream",
       type: "Dessert",
       ingredients: [
         "2 cups heavy cream",
