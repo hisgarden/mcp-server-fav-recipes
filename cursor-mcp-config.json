@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "favorite-recipes": {
+      "command": "node",
+      "args": ["/Users/jwen/workspace/ml/MCP/mcp-server-fav-recipes/dist/index.js"],
+      "env": {}
+    }
+  }
+}
+

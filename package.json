@@ -15,15 +15,36 @@
     "start": "node dist/index.js",
     "dev": "tsx src/index.ts",
     "lint": "eslint src --ext .ts",
-    "clean": "rm -rf dist"
+    "lint:fix": "eslint src --ext .ts --fix",
+    "clean": "rm -rf dist",
+    "audit": "npm audit",
+    "audit:fix": "npm audit fix",
+    "audit:ci": "audit-ci --config audit-ci.json",
+    "security:check": "npm audit && npm audit --audit-level=moderate",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged",
+    "test:security": "npm audit --audit-level=high",
+    "sbom": "./scripts/generate-sbom.sh",
+    "security:full": "npm run security:check && npm run sbom"
   },
   "keywords": [
     "mcp",
     "recipes",
     "meal-planning"
   ],
-  "author": "Inna",
+  "author": {
+    "name": "Jin Wen",
+    "email": "jin.wen@hisgarden.org"
+  },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hisgarden/mcp-server-fav-recipes.git"
+  },
+  "homepage": "https://github.com/hisgarden/mcp-server-fav-recipes#readme",
+  "bugs": {
+    "url": "https://github.com/hisgarden/mcp-server-fav-recipes/issues"
+  },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
     "zod": "^3.25.76"
@@ -34,7 +55,13 @@
     "@typescript-eslint/parser": "^6.0.0",
     "eslint": "^8.0.0",
     "tsx": "^4.0.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "audit-ci": "^6.0.0",
+    "npm-audit-resolver": "^4.0.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.0.0",
+    "@cyclonedx/cyclonedx-npm": "^3.0.0",
+    "prettier": "^3.0.0"
   },
   "engines": {
     "node": ">=18"

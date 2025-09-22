@@ -90,85 +90,89 @@ export const RECIPES: CuisineRecipes = {
       ]
     }
   ],
-  Indian: [
+  Thai: [
     {
-      name: "Chicken Tikka Masala",
+      name: "Pad Thai",
       type: "Main Course",
       ingredients: [
-        "2 lbs chicken breast, cubed",
-        "1 cup yogurt",
-        "2 tbsp lemon juice",
-        "2 tsp garam masala",
-        "1 tsp cumin",
-        "1 tsp coriander",
-        "1 tsp paprika",
-        "2 tbsp tomato paste",
-        "1 can crushed tomatoes",
-        "1 cup heavy cream",
-        "2 onions, diced",
-        "4 garlic cloves, minced",
-        "2 tbsp ginger, minced",
-        "Basmati rice"
+        "8 oz rice noodles",
+        "2 tbsp vegetable oil",
+        "2 cloves garlic, minced",
+        "1/2 lb shrimp, peeled and deveined",
+        "2 eggs, beaten",
+        "2 tbsp fish sauce",
+        "2 tbsp tamarind paste",
+        "2 tbsp palm sugar",
+        "1 tbsp lime juice",
+        "1/2 cup bean sprouts",
+        "2 green onions, chopped",
+        "1/4 cup roasted peanuts, chopped",
+        "1 lime, cut into wedges",
+        "Fresh cilantro for garnish"
       ],
       instructions: [
-        "Marinate chicken in yogurt, lemon juice, and spices for 2+ hours",
-        "Thread chicken onto skewers and grill until cooked",
-        "Sauté onions until golden, add garlic and ginger",
-        "Add tomato paste and cook 1 minute",
-        "Add crushed tomatoes and simmer 10 minutes",
-        "Stir in cream and grilled chicken",
-        "Simmer until sauce thickens",
-        "Serve over basmati rice with naan bread"
+        "Soak rice noodles in warm water for 30 minutes until soft",
+        "Heat oil in wok over high heat",
+        "Add garlic and stir-fry until fragrant",
+        "Add shrimp and cook until pink",
+        "Push shrimp to one side, add beaten eggs",
+        "Scramble eggs, then mix with shrimp",
+        "Add drained noodles and sauce mixture",
+        "Toss everything together until noodles are coated",
+        "Add bean sprouts and green onions",
+        "Garnish with peanuts, lime wedges, and cilantro"
       ]
     },
     {
-      name: "Samosas",
+      name: "Tom Yum Goong",
       type: "Appetizer",
       ingredients: [
-        "2 cups all-purpose flour",
-        "4 tbsp oil",
-        "1 tsp salt",
-        "Water as needed",
-        "3 potatoes, boiled and diced",
-        "1 cup green peas",
-        "1 onion, finely chopped",
-        "2 tsp cumin seeds",
-        "1 tsp coriander seeds",
-        "1 tsp garam masala",
-        "Oil for deep frying"
+        "4 cups chicken or shrimp stock",
+        "2 stalks lemongrass, bruised and cut into 2-inch pieces",
+        "3 kaffir lime leaves",
+        "3 slices galangal",
+        "2-3 Thai chilies, crushed",
+        "1/2 lb shrimp, peeled and deveined",
+        "1 cup mushrooms, sliced",
+        "2 tbsp fish sauce",
+        "2 tbsp lime juice",
+        "1 tsp sugar",
+        "Fresh cilantro for garnish"
       ],
       instructions: [
-        "Make dough with flour, oil, salt, and water",
-        "Rest dough for 30 minutes",
-        "Heat oil in pan, add cumin and coriander seeds",
-        "Add onions, cook until translucent",
-        "Add potatoes, peas, and spices",
-        "Cook filling until well combined",
-        "Roll dough thin, cut into circles",
-        "Fill and fold into triangular parcels",
-        "Deep fry until golden and crispy"
+        "Bring stock to boil in a large pot",
+        "Add lemongrass, lime leaves, galangal, and chilies",
+        "Simmer for 5 minutes to infuse flavors",
+        "Add shrimp and mushrooms",
+        "Cook until shrimp turn pink",
+        "Season with fish sauce, lime juice, and sugar",
+        "Taste and adjust seasoning",
+        "Garnish with fresh cilantro",
+        "Serve hot"
       ]
     },
     {
-      name: "Mango Lassi",
+      name: "Mango Sticky Rice",
       type: "Dessert",
       ingredients: [
-        "1 ripe mango, peeled and chopped",
-        "1 cup plain yogurt",
-        "0.5 cup milk",
-        "2-3 tbsp sugar",
-        "0.25 tsp cardamom powder",
-        "Ice cubes",
-        "Pistachios for garnish"
+        "1 cup glutinous rice",
+        "1 cup coconut milk",
+        "1/2 cup sugar",
+        "1/2 tsp salt",
+        "2 ripe mangoes, sliced",
+        "2 tbsp toasted sesame seeds",
+        "Fresh mint leaves for garnish"
       ],
       instructions: [
-        "Blend mango, yogurt, milk, and sugar until smooth",
-        "Add cardamom powder and blend again",
-        "Taste and adjust sweetness",
-        "Add ice cubes and blend until frothy",
-        "Pour into glasses",
-        "Garnish with chopped pistachios",
-        "Serve chilled"
+        "Soak glutinous rice in water for 2 hours",
+        "Steam rice for 20-25 minutes until tender",
+        "Heat coconut milk with sugar and salt",
+        "Pour hot coconut milk over cooked rice",
+        "Let rice absorb the coconut milk for 10 minutes",
+        "Arrange sliced mangoes on serving plates",
+        "Scoop sticky rice next to mangoes",
+        "Drizzle with remaining coconut milk",
+        "Garnish with sesame seeds and mint leaves"
       ]
     }
   ],
@@ -315,6 +319,192 @@ export const RECIPES: CuisineRecipes = {
         "Fry until golden brown, turning once",
         "Drain on paper towels",
         "Roll in cinnamon sugar while warm"
+      ]
+    }
+  ],
+  Chinese: [
+    {
+      name: "Kung Pao Chicken",
+      type: "Main Course",
+      ingredients: [
+        "1 lb chicken breast, diced",
+        "2 tbsp soy sauce",
+        "1 tbsp rice wine",
+        "1 tsp cornstarch",
+        "2 tbsp vegetable oil",
+        "6-8 dried red chilies",
+        "1 tbsp Sichuan peppercorns",
+        "3 garlic cloves, minced",
+        "1 inch ginger, minced",
+        "1 bell pepper, diced",
+        "1/2 cup roasted peanuts",
+        "2 tbsp hoisin sauce",
+        "1 tbsp dark soy sauce",
+        "1 tsp sugar",
+        "2 green onions, chopped"
+      ],
+      instructions: [
+        "Marinate chicken with soy sauce, rice wine, and cornstarch for 15 minutes",
+        "Heat oil in wok over high heat",
+        "Add dried chilies and Sichuan peppercorns, stir-fry until fragrant",
+        "Add chicken and stir-fry until cooked through",
+        "Add garlic, ginger, and bell pepper",
+        "Stir-fry for 2-3 minutes",
+        "Add peanuts and sauce mixture",
+        "Toss everything together and garnish with green onions"
+      ]
+    },
+    {
+      name: "Char Siu (Chinese BBQ Pork)",
+      type: "Main Course",
+      ingredients: [
+        "2 lbs pork shoulder or tenderloin",
+        "3 tbsp hoisin sauce",
+        "2 tbsp soy sauce",
+        "2 tbsp honey",
+        "1 tbsp rice wine",
+        "1 tbsp five-spice powder",
+        "2 garlic cloves, minced",
+        "1 inch ginger, minced",
+        "1 tbsp red food coloring (optional)",
+        "2 tbsp vegetable oil"
+      ],
+      instructions: [
+        "Cut pork into long strips about 2 inches wide",
+        "Mix all marinade ingredients in a bowl",
+        "Coat pork strips with marinade and refrigerate overnight",
+        "Preheat oven to 400°F (200°C)",
+        "Place pork on wire rack over baking sheet",
+        "Roast for 20 minutes, then reduce heat to 350°F (175°C)",
+        "Continue roasting for 30-40 minutes, basting with marinade",
+        "Let rest 10 minutes before slicing"
+      ]
+    },
+    {
+      name: "Egg Tarts (Dan Tat)",
+      type: "Dessert",
+      ingredients: [
+        "1 cup all-purpose flour",
+        "1/2 cup butter, cold and cubed",
+        "1/4 cup ice water",
+        "1/2 tsp salt",
+        "4 large eggs",
+        "1/2 cup sugar",
+        "1 1/2 cups milk",
+        "1 tsp vanilla extract"
+      ],
+      instructions: [
+        "Make pastry: mix flour and salt, cut in butter until crumbly",
+        "Add ice water gradually until dough forms",
+        "Chill dough for 30 minutes",
+        "Roll out and cut into circles for tart shells",
+        "Preheat oven to 400°F (200°C)",
+        "Make custard: whisk eggs, sugar, milk, and vanilla",
+        "Strain custard mixture",
+        "Fill tart shells with custard",
+        "Bake for 15-20 minutes until custard is set",
+        "Cool before serving"
+      ]
+    }
+  ],
+  Vietnamese: [
+    {
+      name: "Pho Bo (Beef Noodle Soup)",
+      type: "Main Course",
+      ingredients: [
+        "2 lbs beef bones",
+        "1 lb beef brisket or flank steak",
+        "1 large onion, halved",
+        "3-inch piece ginger, sliced",
+        "5 star anise pods",
+        "1 cinnamon stick",
+        "3 cloves",
+        "1 cardamom pod",
+        "1 tbsp coriander seeds",
+        "1 tbsp fennel seeds",
+        "8 cups water",
+        "2 tbsp fish sauce",
+        "1 tbsp sugar",
+        "1 lb rice noodles",
+        "Bean sprouts",
+        "Thai basil leaves",
+        "Lime wedges",
+        "Sliced jalapeños",
+        "Hoisin sauce",
+        "Sriracha sauce"
+      ],
+      instructions: [
+        "Char onion and ginger over open flame or in broiler",
+        "Toast spices in dry pan until fragrant",
+        "Simmer beef bones in water for 2-3 hours",
+        "Add charred onion, ginger, and spices",
+        "Simmer for another hour",
+        "Strain broth and season with fish sauce and sugar",
+        "Slice beef thinly against the grain",
+        "Cook rice noodles according to package directions",
+        "Arrange noodles in bowls with raw beef slices",
+        "Pour hot broth over beef to cook it",
+        "Serve with herbs, sprouts, lime, and sauces"
+      ]
+    },
+    {
+      name: "Banh Mi",
+      type: "Main Course",
+      ingredients: [
+        "1 baguette or Vietnamese bread",
+        "1/2 lb pork belly or grilled pork",
+        "1/4 cup mayonnaise",
+        "2 tbsp pâté",
+        "1 cucumber, julienned",
+        "2 carrots, julienned",
+        "1 daikon radish, julienned",
+        "1/4 cup rice vinegar",
+        "1 tbsp sugar",
+        "1/2 tsp salt",
+        "Fresh cilantro",
+        "Fresh jalapeños, sliced",
+        "Soy sauce",
+        "Maggi seasoning"
+      ],
+      instructions: [
+        "Pickle vegetables: mix carrots, daikon with vinegar, sugar, and salt",
+        "Let vegetables marinate for 30 minutes",
+        "Slice baguette lengthwise, leaving one side attached",
+        "Spread mayonnaise and pâté on bread",
+        "Layer pork belly or grilled pork",
+        "Add pickled vegetables",
+        "Top with cilantro and jalapeños",
+        "Drizzle with soy sauce and Maggi seasoning",
+        "Close sandwich and serve immediately"
+      ]
+    },
+    {
+      name: "Che Ba Mau (Three Color Dessert)",
+      type: "Dessert",
+      ingredients: [
+        "1/2 cup mung beans",
+        "1/2 cup red beans",
+        "1/2 cup black-eyed peas",
+        "1/2 cup coconut milk",
+        "1/4 cup sugar",
+        "1/4 tsp salt",
+        "1/2 cup tapioca pearls",
+        "1/2 cup grass jelly, cubed",
+        "Crushed ice",
+        "Coconut cream for topping"
+      ],
+      instructions: [
+        "Soak all beans separately overnight",
+        "Cook each type of bean until soft",
+        "Sweeten beans with sugar while warm",
+        "Cook tapioca pearls until translucent",
+        "Prepare coconut milk with sugar and salt",
+        "Layer beans in serving glasses",
+        "Add tapioca pearls and grass jelly",
+        "Top with crushed ice",
+        "Pour coconut milk over everything",
+        "Drizzle with coconut cream",
+        "Serve chilled"
       ]
     }
   ]
