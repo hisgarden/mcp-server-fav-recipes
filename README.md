@@ -1,5 +1,7 @@
 # MCP Server - Favorite Recipes
 
+[English](README.md) | [中文](README_CN.md)
+
 An MCP (Model Context Protocol) server that provides access to traditional recipes from different cuisines, along with meal planning capabilities.
 
 ## Features

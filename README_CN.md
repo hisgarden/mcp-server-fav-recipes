@@ -1,5 +1,7 @@
 # MCP 服务器 - 最爱食谱 (TypeScript)
 
+[English](README.md) | [中文](README_CN.md)
+
 一个高性能的 MCP (模型上下文协议) 服务器，使用 TypeScript 构建，提供基于菜系的食谱和智能膳食规划功能。
 
 ## 🚀 功能特性
